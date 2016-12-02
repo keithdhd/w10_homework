@@ -15,5 +15,9 @@ describe("record store", function(){
 
   it("record store has city", function(){
     assert.equal("Glasgow", recordStore1.city);
-  })
+  });
+
+  it("record store start inventory is nil", function(){
+    assert.equal(0, recordStore1.stockInventory.length);
+  });
 })
