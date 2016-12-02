@@ -11,6 +11,10 @@ beforeEach(function(){
 
 it("record has artist", function(){
   assert.equal("The Beatles", record1.artist);
+});
+
+it("record has title", function(){
+  assert.equal("Yellow Submarine", record1.title);
 })
 
 });
