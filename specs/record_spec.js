@@ -15,6 +15,10 @@ it("record has artist", function(){
 
 it("record has title", function(){
   assert.equal("Yellow Submarine", record1.title);
+});
+
+it("record has price", function(){
+  assert.equal(9.99, record1.price);
 })
 
 });
