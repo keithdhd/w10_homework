@@ -11,5 +11,9 @@ describe("record store", function(){
 
   it("record store has name", function(){
     assert.equal("Breaking Records", recordStore1.name);
+  });
+
+  it("record store has city", function(){
+    assert.equal("Glasgow", recordStore1.city);
   })
 })
