@@ -10,10 +10,9 @@ var RecordStore = function(name, city){
 
 
 RecordStore.prototype = {
-  // addInventory: function(record){
-  //   this.stockInventory.push(record);
-  // }
-}
+  
+
+};
 
 InheritsFrom(RecordStore, Store);
 

@@ -9,6 +9,9 @@ var Store = function(){
 Store.prototype = {
   addInventory: function(record){
     this.stockInventory.push(record);
+  },
+  recordSale: function(amount){
+    this.sales += amount;
   }
 
 };
