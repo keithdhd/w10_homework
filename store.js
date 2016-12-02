@@ -12,6 +12,9 @@ Store.prototype = {
   },
   recordSale: function(amount){
     this.sales += amount;
+  },
+  recordRefund: function(amount){
+    this.refunds -= amount;
   }
 
 };

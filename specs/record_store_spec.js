@@ -36,5 +36,10 @@ describe("record store", function(){
   it("can record sale", function(){
     recordStore1.recordSale(10);
     assert.equal(10, recordStore1.sales);
+  });
+
+  it("can record refund", function(){
+    recordStore1.recordRefund(20);
+    assert.equal(-20, recordStore1.refunds);
   })
 })
