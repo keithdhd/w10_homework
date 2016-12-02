@@ -1,17 +1,20 @@
+var InheritsFrom = require("./inheritsFrom");
+var Store = require("./store");
+
 var RecordStore = function(name, city){
   this.name = name;
   this.city = city;
-  this.stockInventory = [];
-  this.soldInventory = [];
-  this.sales = 0;
-  this.refunds = 0;
+  Store.call(this);
 };
 
 
+
 RecordStore.prototype = {
-  addInventory: function(record){
-    this.stockInventory.push(record);
-  }
+  // addInventory: function(record){
+  //   this.stockInventory.push(record);
+  // }
 }
+
+InheritsFrom(RecordStore, Store);
 
 module.exports = RecordStore;
