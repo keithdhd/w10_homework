@@ -17,7 +17,11 @@ describe("record store", function(){
     assert.equal("Glasgow", recordStore1.city);
   });
 
-  it("record store start inventory is nil", function(){
+  it("record store stock inventory is nil", function(){
     assert.equal(0, recordStore1.stockInventory.length);
   });
+
+  it("record store sold inventory starts at nil", function(){
+    assert.equal(0, recordStore1.soldInventory.length);
+  })
 })
