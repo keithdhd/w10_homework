@@ -15,6 +15,12 @@ Store.prototype = {
   },
   recordRefund: function(amount){
     this.refunds -= amount;
+  },
+  reportIncome: function(num){
+    // var stock = [1];
+    console.log(num);
+  // return stock.forEach(function(item){ 
+  // item.name});
   }
 
 };

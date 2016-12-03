@@ -41,5 +41,12 @@ describe("record store", function(){
   it("can record refund", function(){
     recordStore1.recordRefund(20);
     assert.equal(-20, recordStore1.refunds);
+  });
+
+  it("find record by name", function(){
+    recordStore1.addInventory(record1);
+    assert.deepEqual(record1, recordStore1.findRecord("The Beatles","Yellow Submarine" ));
   })
+
+
 })
