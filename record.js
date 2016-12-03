@@ -1,7 +1,8 @@
-var Record = function(artist, title, price){
+var Record = function(artist, title, purPrice, salePrice){
   this.artist = artist;
   this.title = title;
-  this.price = price;
+  this.purPrice = purPrice;
+  this.salePrice = salePrice;
 };
 
 module.exports = Record;

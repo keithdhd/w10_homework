@@ -6,10 +6,15 @@ describe("record store", function(){
 
   var recordStore1;
   var record1;
+  var record2;
+  var record3;
 
   beforeEach(function(){
     recordStore1 = new RecordStore("Breaking Records", "Glasgow");
-    record1 = new Record("The Beatles", "Yellow Submarine", 9.99);
+    record1 = new Record("The Beatles", "Yellow Submarine", 9.99, 12.99);
+    record2 = new Record("The Beatles", "Help", 12.99, 15.99);
+    record3 = new Record("Take That", "Back for Good", 6.99, 9.99);
+
   });
 
   it("record store has name", function(){
@@ -44,8 +49,15 @@ describe("record store", function(){
   });
 
   it("find record by name", function(){
+    recordStore1.addInventory(record2);
     recordStore1.addInventory(record1);
-    assert.deepEqual(record1, recordStore1.findRecord("The Beatles","Yellow Submarine" ));
+    assert.deepEqual(record2, recordStore1.findRecord("The Beatles","Help" ));
+  });
+
+  it("find records by artist", function(){
+    recordStore1.addInventory(record2);
+    recordStore1.addInventory(record1);
+   assert.deepEqual(record2, record1, recordStore1.findArtistRecords("The Beatles"));
   })
 
 

@@ -6,7 +6,7 @@ describe("record", function(){
   var record1;
 
 beforeEach(function(){
-  record1 = new Record("The Beatles", "Yellow Submarine", 9.99);
+  record1 = new Record("The Beatles", "Yellow Submarine", 9.99, 12.99);
 });
 
 it("record has artist", function(){
@@ -18,7 +18,11 @@ it("record has title", function(){
 });
 
 it("record has price", function(){
-  assert.equal(9.99, record1.price);
-})
+  assert.equal(9.99, record1.purPrice);
+});
+
+it("record has price", function(){
+  assert.equal(12.99, record1.salePrice);
+});
 
 });
