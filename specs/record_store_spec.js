@@ -57,7 +57,8 @@ describe("record store", function(){
   it("find records by artist", function(){
     recordStore1.addInventory(record2);
     recordStore1.addInventory(record1);
-   assert.deepEqual(record2, record1, recordStore1.findArtistRecords("The Beatles"));
+    recordStore1.addInventory(record3);
+   assert.deepEqual([record2, record1], recordStore1.findArtistRecords("The Beatles"));
   })
 
 
