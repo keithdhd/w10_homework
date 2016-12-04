@@ -84,5 +84,15 @@ describe("record store", function(){
     assert.equal(15.99, recordStore1.sales);
   });
 
+  it("can report Profit", function(){
+    recordStore1.addInventory(record2);
+    recordStore1.addInventory(record1);
+    recordStore1.addInventory(record3);
+    recordStore1.sellRecord("The Beatles","Help");
+    recordStore1.sellRecord("The Beatles","Yellow Submarine");
+    assert.equal(6.00, recordStore1.reportProfit());
+
+
+  })
 
 })

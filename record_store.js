@@ -30,8 +30,8 @@ RecordStore.prototype = {
    return this.stockInventory.find( function(record) {
      return record.artist === artist && record.title === title;
    });
-},
-findArtistRecords: function(artist){
+ },
+ findArtistRecords: function(artist){
   if(!artist) return this.stockInventory;
   return this.stockInventory.filter( function(record) {
     return record.artist === artist;
@@ -59,6 +59,9 @@ sellRecord: function(artist, title){
   this.stockInventory.splice(index, 1);
   this.soldInventory.push(record);
   this.recordSale(record.salePrice);
+},
+reportProfit: function(){
+  return this.soldSaleValue() - this.soldCostValue();
 }
 };
 
