@@ -59,6 +59,20 @@ describe("record store", function(){
     recordStore1.addInventory(record1);
     recordStore1.addInventory(record3);
    assert.deepEqual([record2, record1], recordStore1.findArtistRecords("The Beatles"));
+  });
+
+  it("find cost value of stock", function(){
+    recordStore1.addInventory(record2);
+    recordStore1.addInventory(record1);
+    recordStore1.addInventory(record3);
+    assert.equal(29.97, recordStore1.stockCostValue());
+  });
+
+  it("find sale value of stock", function(){
+    recordStore1.addInventory(record2);
+    recordStore1.addInventory(record1);
+    recordStore1.addInventory(record3);
+    assert.equal(38.97, recordStore1.stockSaleValue());
   })
 
 

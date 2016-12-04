@@ -36,6 +36,14 @@ findArtistRecords: function(artist){
   return this.stockInventory.filter( function(record) {
     return record.artist === artist;
   });
+},
+stockCostValue: function(){
+  var costPrice = this.stockInventory.map(function(record){return record.purPrice})
+  return costPrice.reduce(function(a,b){return a + b}, 0);
+},
+stockSaleValue: function(){
+  var salePrice = this.stockInventory.map(function(record){return record.salePrice})
+  return salePrice.reduce(function(a,b){return a + b}, 0);
 }
 };
 
