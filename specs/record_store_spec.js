@@ -73,7 +73,16 @@ describe("record store", function(){
     recordStore1.addInventory(record1);
     recordStore1.addInventory(record3);
     assert.equal(38.97, recordStore1.stockSaleValue());
-  })
+  });
+
+  it("sell record", function(){
+    recordStore1.addInventory(record2);
+    recordStore1.addInventory(record1);
+    recordStore1.sellRecord("The Beatles","Help");
+    assert.equal(1, recordStore1.stockInventory.length);
+    assert.equal(1, recordStore1.soldInventory.length);
+    assert.equal(15.99, recordStore1.sales);
+  });
 
 
 })

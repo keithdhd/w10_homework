@@ -44,6 +44,21 @@ stockCostValue: function(){
 stockSaleValue: function(){
   var salePrice = this.stockInventory.map(function(record){return record.salePrice})
   return salePrice.reduce(function(a,b){return a + b}, 0);
+},
+soldCostValue: function(){
+  var costPrice = this.soldInventory.map(function(record){return record.purPrice})
+  return costPrice.reduce(function(a,b){return a + b}, 0);
+},
+soldSaleValue: function(){
+  var salePrice = this.soldInventory.map(function(record){return record.salePrice})
+  return salePrice.reduce(function(a,b){return a + b}, 0);
+},
+sellRecord: function(artist, title){
+  var record = this.findRecord(artist, title);
+  var index = this.stockInventory.indexOf(record);
+  this.stockInventory.splice(index, 1);
+  this.soldInventory.push(record);
+  this.recordSale(record.salePrice);
 }
 };
 
